@@ -29,7 +29,14 @@ export default function App() {
   } = useShapes()
 
   // Горячие клавиши: R / O / V — инструменты, Ctrl+Z / Ctrl+Shift+Z — история.
-  useHotkeys({ onToolSelect: setTool, onUndo: undo, onRedo: redo, enabled: true })
+  // Пока тянется фигура или растягивается черновик, хоткеи отключены:
+  // undo/redo в середине сеанса ломает снапшоты истории (см. AUDIT.md №1).
+  useHotkeys({
+    onToolSelect: setTool,
+    onUndo: undo,
+    onRedo: redo,
+    enabled: draft === null && movingId === null,
+  })
 
   const selectedShape = shapes.find((shape) => shape.id === selectedId) ?? null
 
