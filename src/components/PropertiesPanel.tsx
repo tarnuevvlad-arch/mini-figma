@@ -1,3 +1,4 @@
+import { PanelHeader } from './PanelHeader'
 import { PRESET_COLORS } from '../constants/shapes'
 import { SHAPE_KIND_LABELS } from '../constants/tools'
 import type { Shape } from '../types/shape'
@@ -12,9 +13,7 @@ interface PropertiesPanelProps {
 export function PropertiesPanel({ selectedShape, onChangeFill }: PropertiesPanelProps) {
   return (
     <section className="shrink-0 border-b border-neutral-800 p-3">
-      <h2 className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
-        Свойства
-      </h2>
+      <PanelHeader>Свойства</PanelHeader>
       {selectedShape === null ? (
         <p className="mt-3 text-xs leading-5 text-neutral-500">
           Выделите фигуру — здесь появятся её размеры, позиция и цвет.
@@ -35,9 +34,7 @@ export function PropertiesPanel({ selectedShape, onChangeFill }: PropertiesPanel
           </dl>
 
           <div className="mt-4">
-            <h3 className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
-              Заливка
-            </h3>
+            <PanelHeader>Заливка</PanelHeader>
             <div className="mt-2 flex flex-wrap items-center gap-1.5">
               {PRESET_COLORS.map((color) => {
                 const active = selectedShape.fill.toLowerCase() === color.toLowerCase()
