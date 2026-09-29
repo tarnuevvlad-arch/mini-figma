@@ -21,12 +21,6 @@ function calculateOrderTotal(order, vip = false) {
   return total
 }
 
-// Мёртвый код: осталась от старой версии отчётов. Никто её не вызывает.
-function buildOldReportLine(order) {
-  const line = order.id + ") " + order.price + " руб., " + order.weight + " кг"
-  return line
-}
-
 orders.forEach((order) => {
   console.log(
     "#" + order.id,
