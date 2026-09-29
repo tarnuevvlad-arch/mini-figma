@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import { zoomAt } from '../utils/geometry'
+import { isTypingTarget } from '../utils/dom'
 import type { Point, Viewport } from '../types/shape'
 
 /** Насколько быстро колесо меняет масштаб. */
@@ -15,13 +16,6 @@ interface UseViewportResult {
   isPanning: boolean
   /** Начать панорамирование из точки экрана (относительно холста). */
   startPan: (screen: Point) => void
-}
-
-function isTypingTarget(target: EventTarget | null): boolean {
-  return (
-    target instanceof HTMLElement &&
-    (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)
-  )
 }
 
 /**
