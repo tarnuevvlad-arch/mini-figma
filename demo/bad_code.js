@@ -2,7 +2,9 @@
 // Проверка: node --check demo/bad_code.js
 // Токен ниже — ФЕЙКОВЫЙ (придуман для демонстрации, ничего не открывает).
 
-const API_TOKEN = "sk-demo-1234567890abcdef1234567890abcdef"
+// Токен берётся из окружения: скопируйте .env.example в .env и подставьте свой.
+// Код никогда не содержит секрета — иначе он «вшивается» в историю git навсегда.
+const API_TOKEN = process.env.DEMO_API_TOKEN ?? "(DEMO_API_TOKEN не задан — см. .env.example)"
 
 // Правила доставки: лёгкие заказы дешевле, тяжёлые — дороже.
 const DELIVERY_LIGHT = 200
