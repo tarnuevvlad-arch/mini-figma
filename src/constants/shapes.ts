@@ -6,6 +6,9 @@
 /** Заливка новых фигур (sky-400). */
 export const DEFAULT_SHAPE_FILL = '#38bdf8'
 
+/** Цвет рамки и маркеров выделения (sky-400). */
+export const SELECTION_COLOR = '#38bdf8'
+
 /** Минимальный размер фигуры: меньше — драг считается кликом и отбрасывается. */
 export const MIN_DRAW_SIZE = 4
 

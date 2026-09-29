@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { HISTORY_CODE, TOOL_BY_CODE } from '../constants/tools'
+import { isTypingTarget } from '../utils/dom'
 import type { Tool } from '../types/shape'
 
 interface UseHotkeysOptions {
@@ -11,13 +12,6 @@ interface UseHotkeysOptions {
   onRedo: () => void
   /** Пока false — хук ничего не делает. */
   enabled?: boolean
-}
-
-function isTypingTarget(target: EventTarget | null): boolean {
-  return (
-    target instanceof HTMLElement &&
-    (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)
-  )
 }
 
 /**

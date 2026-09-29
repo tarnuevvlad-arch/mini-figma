@@ -1,7 +1,6 @@
-import { SELECTION_HANDLE_SIZE } from '../constants/shapes'
+import { SELECTION_COLOR, SELECTION_HANDLE_SIZE } from '../constants/shapes'
 import type { Point, Shape } from '../types/shape'
 
-/** Точки крепления маркеров рамки выделения (в процентах от размера фигуры). */
 const HANDLE_POSITIONS = [
   { left: '0%', top: '0%' },
   { left: '50%', top: '0%' },
@@ -12,9 +11,6 @@ const HANDLE_POSITIONS = [
   { left: '50%', top: '100%' },
   { left: '100%', top: '100%' },
 ] as const
-
-/** Цвет рамки выделения (sky-400). */
-const SELECTION_COLOR = '#38bdf8'
 
 interface ShapeProps {
   shape: Shape

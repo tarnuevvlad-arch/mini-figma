@@ -1,3 +1,4 @@
+import { PanelHeader } from './PanelHeader'
 import { SHAPE_KIND_LABELS } from '../constants/tools'
 import type { Shape } from '../types/shape'
 
@@ -11,9 +12,7 @@ interface LayersPanelProps {
 export function LayersPanel({ shapes, selectedId, onSelect }: LayersPanelProps) {
   return (
     <section className="flex min-h-0 flex-1 flex-col p-3">
-      <h2 className="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">
-        Слои
-      </h2>
+      <PanelHeader>Слои</PanelHeader>
       {shapes.length === 0 ? (
         <p className="mt-3 text-xs leading-5 text-neutral-500">
           Пока пусто. Нарисуйте фигуру инструментами R или O.
