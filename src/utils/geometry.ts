@@ -17,14 +17,6 @@ export function screenToCanvas(screen: Point, viewport: Viewport): Point {
   }
 }
 
-/** Координаты канваса -> экранные (обратное преобразование). */
-export function canvasToScreen(canvas: Point, viewport: Viewport): Point {
-  return {
-    x: canvas.x * viewport.zoom + viewport.x,
-    y: canvas.y * viewport.zoom + viewport.y,
-  }
-}
-
 /**
  * Зум вокруг точки экрана: точка канваса под курсором остаётся на месте,
  * камера сдвигается так, чтобы компенсировать изменение масштаба.
